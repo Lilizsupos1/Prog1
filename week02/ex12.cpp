@@ -3,7 +3,7 @@
 #include "Simple_window.h"
 #include "Graph.h"
 
-int main ()
+int main ()try
 {
      using namespace Graph_lib;
     
@@ -115,4 +115,14 @@ int main ()
     //win2.wait_for_button();
 }
 
+
+
+catch (exception& e) {
+    cerr << "exception: " << e.what() << endl;
+    keep_window_open();
+}
+catch (...) {
+    cerr << "exception\n";
+    keep_window_open();
+}
 
