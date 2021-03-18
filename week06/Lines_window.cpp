@@ -13,8 +13,7 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
 
     color_menu{ Point{x_max() - 70,80},70,20,Menu::vertical,"color" },
 
-    //mivel szabad a lambda, hat legyen lambda, remelem nem tul csunya
-    //valamiert nem lambdazott CB eseten nem hajlando ext referenciat elfogadni :/
+    
     menu_button{ Point{x_max() - 80,60},80,20, "color menu", [](Address, Address adr) {
     reference_to<Lines_window>(adr).color_menu.show();
   
@@ -34,7 +33,7 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
     xy_out.put("no point");
     attach(lines);
 
-    //lambda-ed button CBs
+    
     color_menu.attach(new Button{ Point{0,0},0,0,"red",[](Address, Address adr) {
         reference_to<Lines_window>(adr).lines.set_color(Color::red);  
         reference_to<Lines_window>(adr).hide_menu();

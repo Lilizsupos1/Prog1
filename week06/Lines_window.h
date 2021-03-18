@@ -22,7 +22,7 @@ private:
 	Button menu_button;
 	Button second_menu_button;
 
-	//hide/show popup in case of selecting buttons within menu / menu callers
+	
 	void hide_menu() {
 		color_menu.hide();
 		menu_button.show();
